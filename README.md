@@ -12,7 +12,7 @@
 * Application：应用程序文件夹
 * Programfiles：项目工程文件，使用LabVIEW2020编写和修改
 
-软件演示视频链接：待添加
+软件演示视频链接：[【中物化实验】拉曼光谱搭建及演示](https://www.bilibili.com/video/BV1FT411t7Rm/)
 
 ##  基本功能  
 1. 双击“拉曼数据助手.exe”，运行软件。
