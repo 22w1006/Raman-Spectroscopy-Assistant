@@ -1,0 +1,217 @@
+% 为使用bibliography参考文献，编译选项选xelatex-bibtex-xelatex*，但很慢
+% 不是最终版本，可以只选xelatex
+
+% 本模板由松鼠制作
+% github地址:github.com/Sciurus365/PhysChemLab
+% 2018年1月23日
+
+%推荐在编辑器窗口使用consolas+微软雅黑混合字体码代码==
+
+
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[UTF8]{article}
+
+
+\usepackage{threeparttable}
+\usepackage[zihao=-4]{ctex}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[a4paper]{geometry}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{siunitx}
+\usepackage{ragged2e}
+\usepackage{fontspec}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage[square,sort,comma,numbers,super]{natbib}
+\usepackage{fancyhdr}
+\usepackage{url}
+
+\usepackage{amsmath}%输入特殊数学符号
+\usepackage{float}%浮动体控制
+\usepackage[figuresright]{rotating}%竖排表格
+
+
+% 纸张、页边距设置
+\graphicspath{{figures/}}
+\geometry{left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm}
+
+% 统一全文英语字体
+\usepackage{unicode-math}
+\setmathfont{XITS Math}
+%\setmainfont{Times New Roman}
+\setmainfont{XITS Math}
+
+
+% 实验相关信息设置
+\newcommand{\expname}{中级物理化学实验报告}
+\newcommand{\expdate}{日期}
+\newcommand{\exptemperature}{0}
+\newcommand{\exppressure}{0}
+\newcommand{\expteacher}{指导教师}
+
+
+
+% 页眉页脚设置
+\pagestyle{fancy}  
+\lhead{拉曼光谱仪搭建与应用}  
+\chead{\expname}  
+\rhead{\expdate}  
+\lfoot{}  
+\cfoot{\thepage}  
+\rfoot{}  
+\renewcommand{\headrulewidth}{0.4pt}  
+\renewcommand{\footrulewidth}{0.4pt}  
+
+% 温度 电动势 浓度和气压的快速输入
+\newcommand{\swd}[1]{\SI{#1}{\degreeCelsius}}
+\newcommand{\sdds}[1]{\SI{#1}{\volt}}
+\newcommand{\snd}[1]{\SI{#1}{\mole \per \liter}}
+\newcommand{\sqy}[1]{\SI{#1}{\kilo \pascal}}
+% 摄氏度、公式中文本、\varepsilon的快速输入
+% \newcommand{\dC}{\si{\degreeCelsius}}
+\newcommand{\tr}[1]{\textrm{#1}}
+\newcommand{\ve}{\varepsilon}
+
+\def\dC{\si{\degreeCelsius}}
+\def\kPa{\,\si{kPa}}
+\newcommand{\dw}[1]{\,\mathrm{#1}}
+
+\def\d{\mathrm{d}}
+\def\e{\mathrm{e}}
+\def\i{\mathrm{i}}
+\def\p{\partial}
+\def\toinfty{\to \infty}
+
+
+% 如果需要在三线表中插入竖线，请进行以下设置以避免竖线被割断
+%\belowrulesep=0ex
+%\aboverulesep=0ex
+
+% 使用siunitx包报告不确定度时，以下设置可以使结果以\bar(X) \pm \sigma 的形式表示
+% 使用siunitx包书写单位时，以下设置可以使单位之间加\cdot点
+\sisetup{
+	separate-uncertainty = true,
+	inter-unit-product = \ensuremath{{}\cdot{}}
+}
+
+\begin{document}
+	
+	%——————————封面页——————————
+	\begin{titlepage}
+		\vspace*{1cm}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.7\linewidth]{logo}
+		\end{figure}
+		
+		\vspace*{0.5cm}
+		
+		\begin{center}
+			\Huge{\textbf{拉曼光谱仪搭建与应用}}
+			
+			\Large{\expname}
+		\end{center}
+		
+		\vspace*{0.5cm}
+		
+		\begin{table}[h]
+			\centering
+				\begin{tabular}{cccc}
+					元培学院 & 肖舒凡 \\
+					化学与分子工程学院  & 曾志炜 \\
+					化学与分子工程学院  & 傅洪鑫 \\
+				\end{tabular}
+		\end{table}
+	
+	\vspace*{1cm}
+	
+	\textbf{摘要}\quad  摘要
+	
+	\end{titlepage}
+	
+	\normalsize
+
+	\section{引言}
+	拉曼光谱是一种分析材料结构和化学成分的有效手段。拉曼光谱基于光的非弹性散射，广泛应用于材料科学、生物医学、环境监测等领域。本实验的目标是搭建自制的拉曼光谱仪，并探索其原理和应用。
+	
+
+	\section{基本原理}
+	\subsection{拉曼散射原理}
+	这里写拉曼散射的原理
+	
+	\subsection{拉曼光谱仪器构造}
+	要配理论图
+
+	\subsection{表面增强拉曼光谱原理}
+	这里简单介绍表面增强的原理
+
+
+	\section{软件开发}
+	用LabView开发软件，实现xx功能，略写即可。
+	
+	详见github项目 https://github.com/22w1006/Raman-Spectroscopy-Assistant。（加个链接）
+	
+	
+	\section{实验步骤}
+	\subsection{实验用品}
+	\textbf{元件} \quad 532 nm 激光器
+	
+	\textbf{试剂} \quad 乙醇、丙酮等
+	
+	\textbf{仪器} \quad 电磁搅拌器、离心机、超声机等
+
+	\subsection{拉曼光谱仪的搭建、标定与测试}
+	根据原理图搭建拉曼光谱。配实际仪器图
+
+	标定过程，文字描述。
+
+	测试过程，文字描述。
+
+	\subsection{纳米银溶胶的制备}
+
+	\subsection{样品测试}
+	\subsubsection{测试1：己胺、苯胺、对硝基苯胺}
+	\subsubsection{测试2：表面增强}
+	\subsubsection{测试3：水和重水}
+
+	
+	\section{实验结果与数据分析}
+	\subsection{拉曼光谱的基本结果}
+	光谱结果：乙醇、丙酮、己胺、苯胺、对硝基苯胺、水、重水、硫酸钠。
+
+	光谱性能表征：光谱范围、分辨率、信噪比。
+
+	\subsection{纳米银溶胶的表面增强拉曼光谱结果展示与分析}
+	增强前后对比，增强数量级说明。
+
+	\subsection{水和重水混合物电解前后的拉曼光谱结果展示与分析}
+	电解前后峰值对比，相对含量变化说明。
+
+	
+	\section{结果讨论与解释}
+	\subsection{己胺、苯胺、对硝基苯胺的Gaussian计算（可选，待定）}
+
+	\subsection{纳米银溶胶的表面增强拉曼光谱效应解释}
+
+	\subsection{水和重水混合物电解过程解释 }
+
+	
+	\section{结论}
+	\subsection{总结实验}
+	xx，达成既定目标。
+
+	\subsection{对实验的改进和未来研究方向的展望}
+	仪器进一步优化；软件的进一步开发：CCD噪点去除；表面增强原理探索
+	
+	
+	\bibliographystyle{ieeetr}
+	\bibliography{reference}
+	% 原生bibtex对中文支持不好，请在bibtex文献库对中文文献做以下调整：
+	% 将作者以 “张三{, }李四{, }松鼠” 形式表示
+	% 将版本号输入在书名一栏 例如 “物理化学实验（第四版）”
+
+
+	
+\end{document}
