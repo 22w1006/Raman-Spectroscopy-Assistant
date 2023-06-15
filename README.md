@@ -1,5 +1,7 @@
 # 拉曼光谱数据助手 for 北京大学中级物理化学实验 2023.5
 
+声明：本软件基于实验教学组提供的硬件进行设计，主要目的是给将来选修本课程的同学作为参考，请勿用作无关用途。
+
 ![ethanol](./figures/ethanol.png)
 ![example](./figures/example.png)
 
